@@ -1,1 +1,1 @@
-# 2026 Bali City Sand Sculpture Festival
+# Bali City Sand Sculpture Exhibition
