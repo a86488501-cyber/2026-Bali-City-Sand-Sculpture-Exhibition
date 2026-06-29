@@ -1,1 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026八里城市沙雕展｜夏日慶典</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+```
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  color: #244052;
+  background: #fffaf0;
+  line-height: 1.8;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  color: #0077a8;
+  font-size: 20px;
+}
+
+.menu a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #244052;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.menu a:hover {
+  color: #009bd6;
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0, 117, 168, 0.35), rgba(255, 198, 91, 0.35)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 60px;
+  color: #fff;
+}
+
+.hero-box {
+  max-width: 900px;
+  animation: fadeUp 1.2s ease;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 76px);
+  line-height: 1.25;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.28);
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+.btns {
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  margin: 6px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  background: #fff;
+  color: #0077a8;
+}
+
+.btn.secondary {
+  background: #ffc85b;
+  color: #244052;
+}
+
+section {
+  padding: 90px 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title span {
+  display: inline-block;
+  color: #009bd6;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: #244052;
+  margin-top: 8px;
+}
+
+.info-grid,
+.ip-grid,
+.works-grid,
+.store-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.info-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  color: #0077a8;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.festival {
+  background: linear-gradient(135deg, #e7f8ff, #fff3cf);
+}
+
+.ip-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.ip-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.ip-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.works-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.work-card {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
+.work-img {
+  height: 170px;
+  background: linear-gradient(135deg, #8ed8f8, #ffe0a3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+}
+
+.work-body {
+  padding: 22px;
+}
+
+.work-body h3 {
+  color: #0077a8;
+  margin-bottom: 8px;
+}
+
+.stores {
+  background: #f6fbff;
+}
+
+.store-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.traffic-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.map {
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 360px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+footer {
+  background: #244052;
+  color: #fff;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: block;
+    text-align: center;
+  }
+
+  .menu {
+    margin-top: 10px;
+  }
+
+  .menu a {
+    display: inline-block;
+    margin: 6px 8px;
+    font-size: 14px;
+  }
+
+  section {
+    padding: 70px 18px;
+  }
+
+  .traffic-box {
+    grid-template-columns: 1fr;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+}
+```
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">2026八里城市沙雕展</div>
+    <div class="menu">
+      <a href="#home">首頁</a>
+      <a href="#info">展覽資訊</a>
+      <a href="#ip">五大IP</a>
+      <a href="#works">作品介紹</a>
+      <a href="#stores">周邊店家</a>
+      <a href="#traffic">交通指南</a>
+      <a href="#contact">聯絡資訊</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-box">
+    <h1>2026八里城市沙雕展<br>夏日慶典</h1>
+    <p>五大人氣IP首度齊聚八里，打造河岸限定的夏日藝術盛會</p>
+    <div class="btns">
+      <a class="btn" href="#info">查看展覽資訊</a>
+      <a class="btn secondary" href="#traffic">如何前往</a>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="container reveal">
+    <div class="section-title">
+      <span>EXHIBITION</span>
+      <h2>展覽資訊</h2>
+    </div>
+
+```
+<div class="info-grid">
+  <div class="card">
+    <h3>展覽主題</h3>
+    <p>以「夏日慶典」為主題，結合沙雕藝術、IP角色與八里河岸風景，打造兼具藝術性與親子趣味的戶外展覽。</p>
+  </div>
+  <div class="card">
+    <h3>展覽日期</h3>
+    <p>2026年8月1日起正式登場。</p>
+  </div>
+  <div class="card">
+    <h3>展覽地點</h3>
+    <p>八里左岸公園及周邊展區。</p>
+  </div>
+  <div class="card">
+    <h3>活動亮點</h3>
+    <p>主題沙雕、角色裝置、開幕活動、打卡禮、工作坊與商圈串聯活動。</p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<section class="festival" id="ip">
+  <div class="container reveal">
+    <div class="section-title">
+      <span>SAN-X IP</span>
+      <h2>五大人氣IP專區</h2>
+    </div>
+
+```
+<div class="ip-grid">
+  <div class="ip-card">
+    <div class="ip-icon">🧸</div>
+    <h3>拉拉熊</h3>
+    <p>療癒可愛的經典角色，陪伴民眾一起感受八里夏日風光。</p>
+  </div>
+  <div class="ip-card">
+    <div class="ip-icon">🐻‍❄️</div>
+    <h3>角落小夥伴</h3>
+    <p>以溫柔可愛的角色魅力，打造充滿驚喜的展區互動。</p>
+  </div>
+  <div class="ip-card">
+    <div class="ip-icon">🐋</div>
+    <h3>鯨鯊桑</h3>
+    <p>結合海洋意象，呼應八里河岸與夏日清爽氛圍。</p>
+  </div>
+  <div class="ip-card">
+    <div class="ip-icon">🐶</div>
+    <h3>科格潘</h3>
+    <p>以活潑逗趣的角色特色，增添展覽歡樂感。</p>
+  </div>
+  <div class="ip-card">
+    <div class="ip-icon">🏖️</div>
+    <h3>白洲軍團</h3>
+    <p>結合運動與夏日元素，串聯八里戶外休閒特色。</p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<section id="works">
+  <div class="container reveal">
+    <div class="section-title">
+      <span>SAND ART</span>
+      <h2>16座沙雕作品介紹</h2>
+    </div>
+
+```
+<div class="works-grid">
+  <div class="work-card"><div class="work-img">🏖️</div><div class="work-body"><h3>作品01｜夏日慶典主雕</h3><p>以多IP同框與八里河岸意象作為入口亮點。</p></div></div>
+  <div class="work-card"><div class="work-img">🧸</div><div class="work-body"><h3>作品02｜拉拉熊的沙灘假期</h3><p>呈現角色在沙灘放鬆玩沙的療癒畫面。</p></div></div>
+  <div class="work-card"><div class="work-img">🐻‍❄️</div><div class="work-body"><h3>作品03｜角落的夏日相遇</h3><p>以可愛角色聚集的場景，營造拍照打卡亮點。</p></div></div>
+  <div class="work-card"><div class="work-img">🐋</div><div class="work-body"><h3>作品04｜鯨鯊桑海洋旅行</h3><p>結合海洋浪花與河岸景觀，展現清爽氛圍。</p></div></div>
+  <div class="work-card"><div class="work-img">🐶</div><div class="work-body"><h3>作品05｜科格潘歡樂派對</h3><p>以活潑互動造型，帶出夏日慶典的趣味感。</p></div></div>
+  <div class="work-card"><div class="work-img">🏃</div><div class="work-body"><h3>作品06｜白洲軍團運動日</h3><p>串聯八里自行車道與戶外運動特色。</p></div></div>
+  <div class="work-card"><div class="work-img">🌊</div><div class="work-body"><h3>作品07｜八里左岸風景</h3><p>以河岸、渡船與自行車道呈現在地風貌。</p></div></div>
+  <div class="work-card"><div class="work-img">🏛️</div><div class="work-body"><h3>作品08｜十三行文化記憶</h3><p>融合十三行博物館意象，展現八里人文特色。</p></div></div>
+  <div class="work-card"><div class="work-img">🍉</div><div class="work-body"><h3>作品09｜夏日西瓜時光</h3><p>以夏季水果與角色互動，打造清涼感畫面。</p></div></div>
+  <div class="work-card"><div class="work-img">☁️</div><div class="work-body"><h3>作品10｜棉花糖小旅行</h3><p>以柔和甜點元素，呈現夢幻可愛氛圍。</p></div></div>
+  <div class="work-card"><div class="work-img">🚲</div><div class="work-body"><h3>作品11｜騎遊八里</h3><p>連結左岸自行車道，展現八里休閒旅遊魅力。</p></div></div>
+  <div class="work-card"><div class="work-img">⛴️</div><div class="work-body"><h3>作品12｜渡船頭印象</h3><p>以渡船與淡水河景，打造具地方記憶的作品。</p></div></div>
+  <div class="work-card"><div class="work-img">🌅</div><div class="work-body"><h3>作品13｜夕陽左岸</h3><p>呈現八里黃昏景色與浪漫河岸氛圍。</p></div></div>
+  <div class="work-card"><div class="work-img">🎪</div><div class="work-body"><h3>作品14｜慶典廣場</h3><p>以旗幟、舞台與角色互動，展現熱鬧感。</p></div></div>
+  <div class="work-card"><div class="work-img">📸</div><div class="work-body"><h3>作品15｜打卡派對</h3><p>設計適合民眾合影的互動式沙雕場景。</p></div></div>
+  <div class="work-card"><div class="work-img">✨</div><div class="work-body"><h3>作品16｜夏日祝福</h3><p>作為展覽收尾亮點，傳遞歡樂與祝福意象。</p></div></div>
+</div>
+```
+
+  </div>
+</section>
+
+<section class="stores" id="stores">
+  <div class="container reveal">
+    <div class="section-title">
+      <span>LOCAL STORES</span>
+      <h2>周邊合作店家</h2>
+    </div>
+
+```
+<div class="store-grid">
+  <div class="card">
+    <h3>八里在地美食</h3>
+    <p>串聯八里周邊特色餐飲店家，讓民眾看展後也能品嚐在地好味道。</p>
+  </div>
+  <div class="card">
+    <h3>商圈集章活動</h3>
+    <p>活動期間可至合作店家參與集章或指定任務，完成後兌換限定好禮。</p>
+  </div>
+  <div class="card">
+    <h3>推薦伴手禮</h3>
+    <p>規劃八里限定商品與特色店家露出，帶動地方商圈行銷效益。</p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<section id="traffic">
+  <div class="container reveal">
+    <div class="section-title">
+      <span>TRANSPORTATION</span>
+      <h2>交通指南</h2>
+    </div>
+
+```
+<div class="traffic-box">
+  <div class="card">
+    <h3>展區位置</h3>
+    <p>地點：八里左岸公園</p>
+    <br>
+    <h3>大眾運輸</h3>
+    <p>可搭乘捷運至關渡站、淡水站後，轉乘公車或渡船前往八里左岸。</p>
+    <br>
+    <h3>自行開車</h3>
+    <p>建議提前查詢周邊停車場資訊，假日期間人潮較多，建議多利用大眾運輸。</p>
+  </div>
+
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps?q=八里左岸公園&output=embed"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container reveal">
+    <div class="section-title">
+      <span>CONTACT</span>
+      <h2>聯絡資訊</h2>
+    </div>
+
+```
+<div class="card">
+  <h3>活動洽詢</h3>
+  <p>主辦單位：新北市政府相關單位</p>
+  <p>活動地點：八里左岸公園</p>
+  <p>服務時間：依官方公告為準</p>
+  <p>更多資訊將陸續於官方網站及社群平台公告。</p>
+</div>
+```
+
+  </div>
+</section>
+
+<footer>
+  <p>2026八里城市沙雕展｜夏日慶典</p>
+  <p>本網站為活動資訊展示頁，實際活動內容依主辦單位公告為準。</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+      const elementVisible = 120;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+</body>
+</html>
 
