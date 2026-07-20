@@ -63,27 +63,25 @@
 
     .section-head{
       text-align:center;
-      max-width:720px;
-      margin:0 auto 36px;
+      max-width:760px;
+      margin:0 auto 42px;
     }
 
     .section-head small{
-      color:#0795b9;
+      color:var(--blue);
       font-weight:900;
       letter-spacing:.16em;
-      font-size:.84rem;
     }
 
     .section-head h2{
       margin:8px 0 10px;
-      color:#164957;
-      font-size:clamp(2rem,4vw,2.9rem);
+      color:var(--blue-dark);
+      font-size:clamp(2rem,4vw,3rem);
       line-height:1.2;
     }
 
     .section-head p{
-      color:#6d8289;
-      font-size:1rem;
+      color:var(--muted);
     }
 
     /* Header */
@@ -99,11 +97,11 @@
     }
 
     .nav-wrap{
-      height78px;
+      height:78px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:70px;
+      gap:24px;
     }
 
     .brand{
@@ -151,35 +149,24 @@
 
     /* Hero */
     .hero{
-     hero{
-  width:100%;
-  min-height:70vh;
-  padding:0;
-  min-height:0;
-  line-height:0;
-
+      width:100%;
+      margin-top:78px;
+      padding:0;
+      min-height:0;
+      line-height:0;
+      background:none;
     }
 
-    .hero::before{
-      display:none;
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
-        180deg,
-        rgba(0,30,42,.02) 20%,
-        rgba(0,50,65,.56) 100%
-      );
+    .hero-banner{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;
     }
 
+    .hero::before,
     .hero::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-1px;
-      height:70px;
-      background:var(--cream);
-      clip-path:polygon(0 72%,15% 58%,29% 76%,43% 56%,58% 74%,73% 57%,88% 72%,100% 60%,100% 100%,0 100%);
+      display:none !important;
     }
 
     .hero-content{
@@ -283,60 +270,60 @@
     }
 
     /* Activity info */
-.activity-grid{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:28px;
-  max-width:1000px;
-  margin:0 auto;
-}
+    .activity-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:28px;
+      max-width:1000px;
+      margin:0 auto;
+    }
 
-.info-card{
-  display:flex;
-  align-items:flex-start;
-  gap:22px;
-  padding:32px;
-  background:#ffffff;
-  border:1px solid rgba(7,149,185,.12);
-  border-radius:24px;
-  box-shadow:0 16px 36px rgba(20,77,94,.10);
-  transition:transform .25s ease, box-shadow .25s ease;
-}
+    .info-card{
+      padding:32px;
+      display:flex;
+      gap:22px;
+      align-items:flex-start;
+      background:#fff;
+      border:1px solid rgba(7,149,185,.12);
+      border-radius:24px;
+      box-shadow:0 16px 36px rgba(20,77,94,.10);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
 
-.info-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 20px 44px rgba(20,77,94,.15);
-}
+    .info-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 20px 44px rgba(20,77,94,.15);
+    }
 
-.info-icon{
-  flex:0 0 66px;
-  width:66px;
-  height:66px;
-  display:grid;
-  place-items:center;
-  border-radius:20px;
-  background:linear-gradient(145deg,#e8f8fb,#fff0bf);
-  font-size:2rem;
-}
+    .info-icon{
+      flex:0 0 66px;
+      width:66px;
+      height:66px;
+      display:grid;
+      place-items:center;
+      border-radius:20px;
+      background:linear-gradient(145deg,var(--sky),#fff1c9);
+      font-size:2rem;
+    }
 
-.info-card h3{
-  margin:0 0 8px;
-  color:#164957;
-  font-size:1.35rem;
-  line-height:1.3;
-}
+    .info-card h3{
+      margin:0 0 8px;
+      color:var(--blue-dark);
+      font-size:1.35rem;
+      line-height:1.3;
+    }
 
-.info-card strong{
-  display:block;
-  margin-bottom:8px;
-  color:#0795b9;
-  font-size:1.08rem;
-}
+    .info-card strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--blue);
+      font-size:1.08rem;
+    }
 
-.info-card p{
-  margin:0;
-  color:#6d8289;
-  font-size:.96rem;
+    .info-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.96rem;
     }
 
     /* Exhibition info */
@@ -617,7 +604,7 @@
       }
 
       .section{
-        padding:90px 0;
+        padding:70px 0;
       }
 
       .nav-wrap{
@@ -628,19 +615,24 @@
         font-size:.9rem;
       }
 
-      .hero{
-        min-height:78vh;
-        padding:110px 0 80px;
-        background-position:center top;
+            .hero{
+        width:100%;
+        margin-top:70px;
+        padding:0;
+        min-height:0;
       }
 
-      .hero h1{
-        font-size:3.1rem;
+      .hero-banner{
+        width:100%;
+        height:auto;
+        display:block;
+        object-fit:contain;
       }
 
-      .hero-actions{
-        display:grid;
-      }
+
+      
+
+      
 
       .btn{
         text-align:center;
@@ -653,7 +645,15 @@
       }
 
       .info-card{
-        padding:26px;
+        padding:24px;
+        gap:16px;
+      }
+
+      .info-icon{
+        width:56px;
+        height:56px;
+        flex-basis:56px;
+        font-size:1.65rem;
       }
 
       .contact-copy,
@@ -691,12 +691,13 @@
 
   <main>
     <!-- 主視覺封面 -->
-       <section class="hero" id="home">
-         <img
+    <section class="hero" id="home">
+      <img
         src="./市府廣告banner_新北水樣FB封面 820x360_0.jpg"
-        alt="2026八里城市沙雕展"
+        alt="2026八里城市沙雕展主視覺"
         class="hero-banner">
-</section>
+    </section>
+
     <!-- 活動資訊 -->
     <section class="section" id="activity">
       <div class="container reveal">
