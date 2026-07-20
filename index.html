@@ -366,71 +366,74 @@
     }
 
     /* Works */
-    .work-group{
-      margin-bottom:34px;
-    }
-
-    .work-group-title{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:18px;
-    }
-
-    .work-group-title span{
-      width:46px;
-      height:46px;
+    .all-works-grid{
       display:grid;
-      place-items:center;
-      border-radius:15px;
-      background:var(--sky);
-      font-size:1.45rem;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:26px;
     }
 
-    .work-group-title h3{
-      color:var(--blue-dark);
-      font-size:1.55rem;
+    .individual-work-card{
+      overflow:hidden;
+      background:#fff;
+      border:1px solid rgba(7,149,185,.12);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      transition:transform .28s ease, box-shadow .28s ease;
+      display:flex;
+      flex-direction:column;
+      min-width:0;
     }
 
-    .works-grid{
-      grid-template-columns:repeat(3,1fr);
+    .individual-work-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 22px 50px rgba(20,77,94,.18);
     }
 
-    .work-card{
-      min-height:190px;
-      padding:28px;
-      position:relative;
-      isolation:isolate;
-      background:linear-gradient(145deg,#fff,#edfafd);
+    .individual-work-image{
+      width:100%;
+      aspect-ratio:16 / 10;
+      object-fit:contain;
+      background:linear-gradient(180deg,#edfafd,#fff8e8);
+      border-bottom:1px solid rgba(7,149,185,.08);
     }
 
-    .work-card::after{
-      content:"";
-      position:absolute;
-      width:125px;
-      height:125px;
-      right:-35px;
-      bottom:-35px;
-      border-radius:50%;
-      background:rgba(7,149,185,.1);
-      z-index:-1;
+    .individual-work-body{
+      flex:1;
+      padding:26px 26px 30px;
     }
 
-    .work-card small{
+    .individual-work-body small{
+      display:block;
+      margin-bottom:7px;
       color:#bd9441;
+      font-size:.78rem;
       font-weight:950;
-      letter-spacing:.12em;
+      letter-spacing:.13em;
     }
 
-    .work-card h4{
-      margin:10px 0 5px;
+    .individual-work-body h3{
+      margin:0 0 10px;
       color:var(--blue-dark);
-      font-size:1.35rem;
+      font-size:1.42rem;
+      line-height:1.35;
     }
 
-    .work-card p{
+    .individual-work-body p{
+      margin:0;
       color:var(--muted);
-      font-size:.92rem;
+      font-size:.95rem;
+      line-height:1.8;
+    }
+
+    .work-category{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:var(--sky);
+      color:#087b98;
+      font-size:.76rem;
+      font-weight:900;
     }
 
     /* Traffic */
@@ -592,7 +595,7 @@
         grid-template-columns:1fr;
       }
 
-      .works-grid,
+      .all-works-grid,
       .traffic-grid{
         grid-template-columns:repeat(2,1fr);
       }
@@ -639,7 +642,7 @@
       }
 
       .activity-grid,
-      .works-grid,
+      .all-works-grid,
       .traffic-grid{
         grid-template-columns:1fr;
       }
@@ -654,6 +657,18 @@
         height:56px;
         flex-basis:56px;
         font-size:1.65rem;
+      }
+
+      .individual-work-card{
+        border-radius:20px;
+      }
+
+      .individual-work-body{
+        padding:22px 20px 25px;
+      }
+
+      .individual-work-body h3{
+        font-size:1.3rem;
       }
 
       .contact-copy,
@@ -765,85 +780,192 @@
         <div class="section-head">
           <small>SAND SCULPTURES</small>
           <h2>作品介紹</h2>
-          <p>依不同角色主題分類，探索本屆沙雕作品。</p>
+          <p>每一件作品皆以獨立圖卡呈現，依序探索本屆沙雕作品。</p>
         </div>
 
-        <div class="work-group">
-          <div class="work-group-title">
-             <img src="./1.入口處主雕.jpg" alt="入口主雕" class="title-icon">
-            <h3>入口主雕</h3>
-          </div>
+        <div class="all-works-grid">
+          <article class="individual-work-card">
+            <img
+              src="./1.入口處主雕.jpg"
+              alt="八里夏日慶典"
+              class="individual-work-image">
 
-          <div class="grid works-grid">
-            <article class="card work-card">
+            <div class="individual-work-body">
+              <span class="work-category">入口主雕</span>
               <small>MAIN SCULPTURE</small>
-              <h4>八里夏日慶典</h4>
-              <p>夏日陽光灑落八里左岸，淡江大橋映襯河海交會的壯麗景色，揭開夏日慶典序幕。拉拉熊、角落小夥伴、鯨鯊桑、烤焦麵包與吻仔魚車隊齊聚八里，熱情迎接每位旅人，邀請大家漫步河岸，在沙雕藝術與自然風光中展開充滿驚喜的夏日慶典旅程。</p>
-            </article>
-          </div>
-        </div>
+              <h3>八里夏日慶典</h3>
+              <p>夏日陽光灑落八里左岸，淡江大橋映襯河海交會的壯麗景色，揭開夏日慶典序幕。拉拉熊、角落小夥伴、鯨鯊桑、烤焦麵包與吻仔魚隊齊聚八里，邀請大家漫步河岸，在沙雕藝術與自然風光中展開夏日旅程。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./2.冰涼一夏.jpg"
+              alt="冰涼一夏"
+              class="individual-work-image">
 
-        <div class="work-group">
-          <div class="work-group-title">
-            <span>🐻</span>
-            <h3>拉拉熊主題作品</h3>
-          </div>
+            <div class="individual-work-body">
+              <span class="work-category">拉拉熊主題作品</span>
+              <small>RILAKKUMA</small>
+              <h3>冰涼一夏</h3>
+              <p>在夏日河岸感受沁涼又悠閒的度假時光。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./3.懶懶戲水趣.jpg"
+              alt="懶懶戲水趣"
+              class="individual-work-image">
 
-          <div class="grid works-grid">
-            <article class="card work-card"><small>RILAKKUMA</small><h4>冰涼一夏</h4><p>在夏日河岸感受沁涼又悠閒的度假時光。</p></article>
-            <article class="card work-card"><small>RILAKKUMA</small><h4>懶懶戲水趣</h4><p>跟著角色一起戲水消暑，享受輕鬆夏日。</p></article>
-            <article class="card work-card"><small>RILAKKUMA</small><h4>沁涼一夏</h4><p>以清爽消暑意象，呈現悠閒自在的河岸風景。</p></article>
-          </div>
-        </div>
+            <div class="individual-work-body">
+              <span class="work-category">拉拉熊主題作品</span>
+              <small>RILAKKUMA</small>
+              <h3>懶懶戲水趣</h3>
+              <p>跟著角色一起戲水消暑，享受輕鬆夏日。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./4.沁涼一夏.jpg"
+              alt="沁涼一夏"
+              class="individual-work-image">
 
-        <div class="work-group">
-          <div class="work-group-title">
-            <span>🍞</span>
-            <h3>烤焦麵包主題作品</h3>
-          </div>
+            <div class="individual-work-body">
+              <span class="work-category">拉拉熊主題作品</span>
+              <small>RILAKKUMA</small>
+              <h3>沁涼一夏</h3>
+              <p>以清爽消暑意象，呈現悠閒自在的河岸風景。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./5.微風相伴.jpg"
+              alt="微風相伴"
+              class="individual-work-image">
 
-          <div class="grid works-grid">
-            <article class="card work-card"><small>KOGEPAN</small><h4>微風相伴</h4><p>伴著河岸微風，享受溫暖而療癒的片刻。</p></article>
-          </div>
-        </div>
+            <div class="individual-work-body">
+              <span class="work-category">烤焦麵包主題作品</span>
+              <small>KOGEPAN</small>
+              <h3>微風相伴</h3>
+              <p>伴著河岸微風，享受溫暖而療癒的片刻。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./6.夏日聚會.jpg"
+              alt="夏日聚會"
+              class="individual-work-image">
 
-        <div class="work-group">
-          <div class="work-group-title">
-            <span>🦈</span>
-            <h3>鯨鯊桑主題作品</h3>
-          </div>
+            <div class="individual-work-body">
+              <span class="work-category">鯨鯊桑主題作品</span>
+              <small>JINBESAN</small>
+              <h3>夏日聚會</h3>
+              <p>角色們齊聚河岸，共享歡樂的夏日聚會。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./7.美好相遇.jpg"
+              alt="美好相遇"
+              class="individual-work-image">
 
-          <div class="grid works-grid">
-            <article class="card work-card"><small>JINBESAN</small><h4>夏日聚會</h4><p>角色們齊聚河岸，共享歡樂的夏日聚會。</p></article>
-            <article class="card work-card"><small>JINBESAN</small><h4>美好相遇</h4><p>旅途中每一次相遇，都是一段珍貴緣分。</p></article>
-          </div>
-        </div>
+            <div class="individual-work-body">
+              <span class="work-category">鯨鯊桑主題作品</span>
+              <small>JINBESAN</small>
+              <h3>美好相遇</h3>
+              <p>旅途中每一次相遇，都是一段珍貴緣分。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./8.深海小驚喜.jpg"
+              alt="深海小驚喜"
+              class="individual-work-image">
 
-        <div class="work-group">
-          <div class="work-group-title">
-            <span>🧸</span>
-            <h3>角落小夥伴主題作品</h3>
-          </div>
+            <div class="individual-work-body">
+              <span class="work-category">角落小夥伴主題作品</span>
+              <small>SUMIKKO GURASHI</small>
+              <h3>深海小驚喜</h3>
+              <p>走進神秘海底世界，發現藏在角落裡的小驚喜。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./9.尋寶趣.jpg"
+              alt="尋寶趣"
+              class="individual-work-image">
 
-          <div class="grid works-grid">
-            <article class="card work-card"><small>SUMIKKO GURASHI</small><h4>深海小驚喜</h4><p>走進神秘海底世界，發現藏在角落裡的小驚喜。</p></article>
-            <article class="card work-card"><small>SUMIKKO GURASHI</small><h4>尋寶趣</h4><p>跟著小夥伴展開一場充滿想像的夏日尋寶旅程。</p></article>
-            <article class="card work-card"><small>SUMIKKO GURASHI</small><h4>一起去看海</h4><p>相約來到八里河岸，一起欣賞美麗海景。</p></article>
-            <article class="card work-card"><small>SUMIKKO GURASHI</small><h4>夥伴大集合</h4><p>熟悉的夥伴們齊聚一堂，分享歡樂時光。</p></article>
-          </div>
-        </div>
+            <div class="individual-work-body">
+              <span class="work-category">角落小夥伴主題作品</span>
+              <small>SUMIKKO GURASHI</small>
+              <h3>尋寶趣</h3>
+              <p>跟著小夥伴展開一場充滿想像的夏日尋寶旅程。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./10.一起去看海.jpg"
+              alt="一起去看海"
+              class="individual-work-image">
 
-        <div class="work-group">
-          <div class="work-group-title">
-            <span>🚴</span>
-            <h3>吻仔魚隊主題作品</h3>
-          </div>
+            <div class="individual-work-body">
+              <span class="work-category">角落小夥伴主題作品</span>
+              <small>SUMIKKO GURASHI</small>
+              <h3>一起去看海</h3>
+              <p>相約來到八里河岸，一起欣賞美麗海景。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./11.夥伴大集合.jpg"
+              alt="夥伴大集合"
+              class="individual-work-image">
 
-          <div class="grid works-grid">
-            <article class="card work-card"><small>KIRIMICHAN.</small><h4>單車遠征隊</h4><p>整裝出發，沿著河岸展開活力十足的單車旅程。</p></article>
-            <article class="card work-card"><small>KIRIMICHAN.</small><h4>海岸騎行</h4><p>迎著海風騎乘，感受八里河岸的自然魅力。</p></article>
-            <article class="card work-card"><small>KIRIMICHAN.</small><h4>滑行時光</h4><p>以動感滑行意象，呈現輕快活潑的夏日氛圍。</p></article>
-          </div>
+            <div class="individual-work-body">
+              <span class="work-category">角落小夥伴主題作品</span>
+              <small>SUMIKKO GURASHI</small>
+              <h3>夥伴大集合</h3>
+              <p>熟悉的夥伴們齊聚一堂，分享歡樂時光。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./12.單車遠征隊.jpg"
+              alt="單車遠征隊"
+              class="individual-work-image">
+
+            <div class="individual-work-body">
+              <span class="work-category">吻仔魚隊主題作品</span>
+              <small>KIRIMICHAN.</small>
+              <h3>單車遠征隊</h3>
+              <p>整裝出發，沿著河岸展開活力十足的單車旅程。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./13.海岸騎行.jpg"
+              alt="海岸騎行"
+              class="individual-work-image">
+
+            <div class="individual-work-body">
+              <span class="work-category">吻仔魚隊主題作品</span>
+              <small>KIRIMICHAN.</small>
+              <h3>海岸騎行</h3>
+              <p>迎著海風騎乘，感受八里河岸的自然魅力。</p>
+            </div>
+          </article>
+          <article class="individual-work-card">
+            <img
+              src="./14.滑行時光.jpg"
+              alt="滑行時光"
+              class="individual-work-image">
+
+            <div class="individual-work-body">
+              <span class="work-category">吻仔魚隊主題作品</span>
+              <small>KIRIMICHAN.</small>
+              <h3>滑行時光</h3>
+              <p>以動感滑行意象，呈現輕快活潑的夏日氛圍。</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
