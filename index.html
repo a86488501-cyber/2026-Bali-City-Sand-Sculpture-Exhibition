@@ -792,6 +792,37 @@
         font-size:1.3rem;
       }
 
+      .individual-work-image{
+        display:block;
+        width:100%;
+        height:auto;
+        min-height:0;
+        object-fit:contain;
+      }
+
+      .individual-work-body{
+        display:block;
+        position:static;
+        width:100%;
+        height:auto;
+        opacity:1;
+        visibility:visible;
+        transform:none;
+        overflow:visible;
+      }
+
+      .individual-work-body p{
+        display:block;
+        height:auto;
+        overflow:visible;
+      }
+
+      #works .reveal{
+        opacity:1;
+        visibility:visible;
+        transform:none;
+      }
+
       .contact-copy,
       .contact-list{
         padding:34px 26px;
@@ -887,7 +918,7 @@
             <div class="news-image-wrap">
               <img
                 src="./新聞1.沙雕師進場圖.jpg"
-                class=""work-showcase-image">
+                class="news-image">
               <span class="news-label">媒體報導</span>
             </div>
 
@@ -920,7 +951,6 @@
             </div>
           </a>
           
-style="display:none;"
           <a
             class="news-card"
             style="display:none;"
@@ -1003,7 +1033,7 @@ style="display:none;"
             <img
               src="./官網沙雕圖-02_0.jpg"
               alt="冰涼一夏"
-              class="work-showcase-image">
+              class="individual-work-image">
 
             <div class="individual-work-body">
               <span class="work-category">拉拉熊主題作品</span>
