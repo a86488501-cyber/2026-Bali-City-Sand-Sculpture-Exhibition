@@ -369,16 +369,16 @@
     /* Activity info */
     .activity-grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:28px;
-      max-width:1000px;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+      max-width:1180px;
       margin:0 auto;
     }
 
     .info-card{
-      padding:32px;
+      padding:24px;
       display:flex;
-      gap:22px;
+      gap:16px;
       align-items:flex-start;
       background:#fff;
       border:1px solid rgba(7,149,185,.12);
@@ -404,17 +404,19 @@
     }
 
     .info-card h3{
-      margin:0 10px;
+      margin:0;
       color:var(--blue-dark);
-      font-size:1.8rem;
-      line-height:1.8;
+      font-size:1.45rem;
+      line-height:1.35;
     }
 
     .info-card strong{
       display:block;
+      margin-top:6px;
       margin-bottom:8px;
       color:var(--blue);
-      font-size:1.08rem;
+      font-size:.92rem;
+      line-height:1.6;
     }
 
     .info-card p{
@@ -691,7 +693,10 @@
         grid-template-columns:280px minmax(0,1fr);
       }
 
-      .activity-grid,
+      .activity-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
       .exhibition-grid,
       .contact-box{
         grid-template-columns:1fr;
@@ -847,8 +852,8 @@
 
       <nav class="nav" aria-label="主要導覽">
         <a href="#home">首頁</a>
-        <a href="#news">活動資訊</a>
-        <a href="#activity">最新消息</a>
+        <a href="#activity">活動資訊</a>
+        <a href="#news">最新消息</a>
         <a href="#exhibition">展覽資訊</a>
         <a href="#works">作品介紹</a>
         <a href="#traffic">交通指南</a>
