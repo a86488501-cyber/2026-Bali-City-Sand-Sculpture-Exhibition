@@ -682,6 +682,67 @@
       transform:none;
     }
 
+
+    /* ===== 圖片跨裝置穩定顯示修正版 ===== */
+    .hero-banner,
+    .news-image,
+    .individual-work-image,
+    .character-logo img{
+      display:block;
+      visibility:visible;
+      opacity:1;
+      max-width:100%;
+    }
+
+    .hero-banner{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .news-image-wrap{
+      width:100%;
+      overflow:hidden;
+    }
+
+    .news-image{
+      width:100%;
+      height:100%;
+      min-height:220px;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .individual-work-card{
+      width:100%;
+      min-width:0;
+    }
+
+    .individual-work-image{
+      width:100%;
+      height:260px;
+      min-height:220px;
+      object-fit:contain;
+      object-position:center;
+      flex:none;
+      background:linear-gradient(180deg,#edfafd,#fff8e8);
+    }
+
+    .character-logo{
+      display:block;
+      width:100%;
+      overflow:visible;
+    }
+
+    .character-logo img{
+      width:auto;
+      max-width:250px;
+      height:auto;
+      max-height:none;
+      object-fit:contain;
+      object-position:left center;
+    }
+
     @media (max-width:980px){
       .menu-btn{
         display:grid;
@@ -856,6 +917,89 @@
       iframe{
         height:330px;
       }
+
+
+      /* 圖片在手機版強制顯示 */
+      .hero-banner{
+        display:block !important;
+        visibility:visible !important;
+        opacity:1 !important;
+        width:100% !important;
+        max-width:100% !important;
+        height:auto !important;
+        min-height:0 !important;
+        object-fit:contain !important;
+      }
+
+      .news-card{
+        overflow:hidden !important;
+      }
+
+      .news-image-wrap{
+        width:100% !important;
+        min-height:200px !important;
+        aspect-ratio:auto !important;
+        overflow:hidden !important;
+      }
+
+      .news-image{
+        display:block !important;
+        visibility:visible !important;
+        opacity:1 !important;
+        width:100% !important;
+        height:220px !important;
+        min-height:220px !important;
+        object-fit:cover !important;
+        object-position:center !important;
+      }
+
+      .all-works-grid{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:22px !important;
+      }
+
+      .individual-work-card{
+        display:flex !important;
+        flex-direction:column !important;
+        width:100% !important;
+        height:auto !important;
+        min-width:0 !important;
+        overflow:hidden !important;
+      }
+
+      .individual-work-image{
+        display:block !important;
+        visibility:visible !important;
+        opacity:1 !important;
+        width:100% !important;
+        max-width:100% !important;
+        height:260px !important;
+        min-height:220px !important;
+        object-fit:contain !important;
+        object-position:center !important;
+        flex:none !important;
+        background:linear-gradient(180deg,#edfafd,#fff8e8) !important;
+      }
+
+      .character-logo{
+        display:block !important;
+        width:100% !important;
+        margin:10px 0 14px !important;
+        overflow:visible !important;
+      }
+
+      .character-logo img{
+        display:block !important;
+        visibility:visible !important;
+        opacity:1 !important;
+        width:auto !important;
+        max-width:220px !important;
+        height:auto !important;
+        max-height:70px !important;
+        object-fit:contain !important;
+        object-position:left center !important;
+      }
     }
   </style>
 </head>
@@ -888,7 +1032,7 @@
       <img
         src="./市府廣告banner_新北水樣FB封面 820x360_0.jpg"
         alt="2026八里城市沙雕展主視覺"
-        class="hero-banner">
+        class="hero-banner" loading="eager" decoding="async">
     </section>
 
 
@@ -951,7 +1095,7 @@
             <div class="news-image-wrap">
               <img
                 src="./新聞1.沙雕師進場圖.jpg"
-                class="news-image">
+                class="news-image" loading="eager" decoding="async">
               <span class="news-label">媒體報導</span>
             </div>
             
@@ -972,7 +1116,7 @@
             <div class="news-image-wrap">
               <img
                 src="./新聞2.沙雕師工作坊01.jpg"
-                class="news-image">
+                class="news-image" loading="eager" decoding="async">
               <span class="news-label">媒體報導</span>
             </div>
 
@@ -992,7 +1136,7 @@
             <div class="news-image-wrap">
               <img
                 src="./開幕式.jpg"
-                class="news-image">
+                class="news-image" loading="eager" decoding="async">
               <span class="news-label">媒體報導</span>
             </div>
 
@@ -1012,7 +1156,7 @@
             <div class="news-image-wrap">
               <img
                 src="./颱風公告.jpg"
-                class="news-image">
+                class="news-image" loading="eager" decoding="async">
               <span class="news-label">最新消息</span>
             </div>
 
@@ -1033,7 +1177,7 @@
             <div class="news-image-wrap">
               <img
                 src="./Google聯播網_正方型_Logo180.jpg"
-                class="news-image">
+                class="news-image" loading="eager" decoding="async">
               <span class="news-label">活動公告</span>
             </div>
 
@@ -1092,7 +1236,7 @@
             <img
               src="./1.入口處主雕.jpg"
               alt="八里夏日慶典"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">入口主雕</span>
@@ -1108,7 +1252,7 @@
             <img
               src="./官網沙雕圖-02_0.jpg"
               alt="冰涼一夏"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">拉拉熊主題作品</span>
@@ -1123,7 +1267,7 @@
           <article class="individual-work-card">
             <img src="./官網沙雕圖-03_0.jpg" 
               alt="懶懶戲水趣" 
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
             
             <div class="individual-work-body">
               <span class="work-category">拉拉熊主題作品</span>
@@ -1139,7 +1283,7 @@
             <img
               src="./官網沙雕圖-04_0.jpg"
               alt="沁涼一夏"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">拉拉熊主題作品</span>
@@ -1155,7 +1299,7 @@
             <img
               src="./官網沙雕圖-05_0.jpg"
               alt="微風相伴"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">烤焦麵包主題作品</span>
@@ -1171,7 +1315,7 @@
             <img
               src="./官網沙雕圖-06_0.jpg"
               alt="夏日聚會"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">鯨鯊桑主題作品</span>
@@ -1186,7 +1330,7 @@
             <img
               src="./官網沙雕圖-07_0.jpg"
               alt="美好相遇"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">鯨鯊桑主題作品</span>
@@ -1201,7 +1345,7 @@
             <img
               src="./官網沙雕圖-08_0.jpg"
               alt="深海小驚喜"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">角落小夥伴主題作品</span>
@@ -1217,7 +1361,7 @@
             <img
               src="./官網沙雕圖-09_0.jpg"
               alt="尋寶趣"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">角落小夥伴主題作品</span>
@@ -1233,7 +1377,7 @@
             <img
               src="./官網沙雕圖-10_0.jpg"
               alt="一起去看海"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">角落小夥伴主題作品</span>
@@ -1250,7 +1394,7 @@
             <img
               src="./官網沙雕圖-11_0.jpg"
               alt="夥伴大集合"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">角落小夥伴主題作品</span>
@@ -1266,7 +1410,7 @@
             <img
               src="./官網沙雕圖-12_0.jpg"
               alt="單車遠征隊"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">吻仔魚隊主題作品</span>
@@ -1283,7 +1427,7 @@
             <img
               src="./官網沙雕圖-13_0.jpg"
               alt="海岸騎行"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">吻仔魚隊主題作品</span>
@@ -1298,7 +1442,7 @@
             <img
               src="./官網沙雕圖-14_0.jpg"
               alt="滑行時光"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">吻仔魚隊主題作品</span>
@@ -1313,7 +1457,7 @@
             <img
               src="./圖片1.jpg"
               alt="角落小夥伴的海岸好友"
-              class="individual-work-image">
+              class="individual-work-image" loading="eager" decoding="async">
 
             <div class="individual-work-body">
               <span class="work-category">超人氣充氣裝置</span>
